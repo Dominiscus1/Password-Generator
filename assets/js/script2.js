@@ -38,6 +38,21 @@ function generatePassword() {
         alert("You must choose at least one set of characters");
         return generatePassword();
     }
+    var userCharPool =[];
+
+    //Create the pool of all characters the user wanted
+    if(userChoiceSpecialChar){
+        userCharPool = userCharPool.concat(specialCharArr);
+    }
+    if(userChoiceUpperCase){
+        userCharPool = userCharPool.concat(upperCaseLetterArr);
+    }
+    if(userChoiceLowerCase){
+        userCharPool = userCharPool.concat(lowerCaseLetterArr);
+    }
+    if(userChoiceNumbers){
+        userCharPool = userCharPool.concat(numberArr);
+    }
 }
 
 function writePassword() {
