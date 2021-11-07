@@ -32,6 +32,12 @@ function generatePassword() {
     console.log(userChoiceLowerCase);
     var userChoiceNumbers = confirm("Do you want number Characters?");
     console.log(userChoiceNumbers);
+
+    //Make sure the user picks at least one type of character group
+    if(!userChoiceSpecialChar && !userChoiceUpperCase && !userChoiceLowerCase && !userChoiceNumbers){
+        alert("You must choose at least one set of characters");
+        return generatePassword();
+    }
 }
 
 function writePassword() {
