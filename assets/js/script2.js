@@ -53,6 +53,18 @@ function generatePassword() {
     if(userChoiceNumbers){
         userCharPool = userCharPool.concat(numberArr);
     }
+
+    var myPassword ="";//This will contain our password once its pushed from math.random
+
+    for(var i = 0; i < userChoiceLength; i++){
+        var index = Math.floor(Math.random() * userCharPool.length);
+        //Index is assigned a random number that is within the length of our character pool
+        // that random number is the index of our character pool and will pull the random
+        // character for our password.
+        myPassword += userCharPool[index];
+        console.log(myPassword);
+    }
+    return myPassword;
 }
 
 function writePassword() {
