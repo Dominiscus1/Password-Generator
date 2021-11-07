@@ -2,9 +2,9 @@ console.log("script2 loaded correctly")
 var generatePasswordButton = document.getElementById("generate");
 
 
-function generatePassword(){
+function generatePassword() {
     //All possible string the password could be made of
-    var specialCharstr ="~`!@#$%^&*()_-+=";
+    var specialCharStr = "~`!@#$%^&*()_-+=";
     var upperCaseLetterStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var lowerCaseLetterStr = "abcdefghijklmnopqrstuvwxyz";
     var numberStr = "0123456789";
@@ -15,10 +15,26 @@ function generatePassword(){
     var lowerCaseLetterArr = lowerCaseLetterStr.split("");
     var numberArr = numberStr.split("");
 
-
+    //create variables for storing the user choices
+    //Ask user to enter desired password length
+    var userChoiceLength = prompt("Enter password length");
+    console.log(userChoiceLength);
+    //create an alert that will tell them to choose a length between 8 and 128
+    if (userChoiceLength < 8 || userChoiceLength > 128) {
+        alert("Password must be between 8 and 128 in length");
+        return generatePassword();
+    }
+    var userChoiceSpecialChar = confirm("Do you want special Characters?");
+    console.log(userChoiceSpecialChar);
+    var userChoiceUpperCase = confirm("Do you want upper case Characters?");
+    console.log(userChoiceUpperCase);
+    var userChoiceLowerCase = confirm("Do you want lower Characters?");
+    console.log(userChoiceLowerCase);
+    var userChoiceNumbers = confirm("Do you want number Characters?");
+    console.log(userChoiceNumbers);
 }
 
-function writePassword(){
+function writePassword() {
     var password = generatePassword();//Hands over password from generate Password function
     var passwordTextEl = document.getElementById("password");
 
@@ -26,4 +42,5 @@ function writePassword(){
     return;
 }
 
+//Added the event listener so that Generate will call write password
 generatePasswordButton.addEventListener("click", writePassword);
