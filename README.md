@@ -14,6 +14,6 @@ The program will generate a random password given a few inputs from the user. It
 - Javascript
 - VSCode as my IDE
 ## ilustration
-![Alt text](assets\Images\Password-Generator.png?raw=true "Password Generator Pcture")
+![Alt text](./assets/Images/Password-Generator.png?raw=true "Password Generator Pcture")
 ## Launch
 https://dominiscus1.github.io/Password-Generator/
