@@ -109,4 +109,3 @@ function writePassword(){
     return;
 }
 
-generate
